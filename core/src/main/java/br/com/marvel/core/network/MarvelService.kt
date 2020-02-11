@@ -1,6 +1,6 @@
-package com.marvel.core.network
+package br.com.marvel.core.network
 
-import com.marvel.core.network.responses.BaseResponse
+import br.com.marvel.core.network.responses.BaseResponse
 import com.marvel.core.network.responses.CharacterResponse
 import com.marvel.core.network.responses.ComicResponse
 import com.marvel.core.network.responses.CreatorResponse
@@ -29,7 +29,7 @@ interface MarvelService {
         @Query("apikey") apiKey: String,
         @Query("hash") hash: String,
         @Query("ts") timestamp: String
-    ): BaseResponse<CharacterResponse>
+    ): CharacterResponse
 
     /**
      * Fetches lists of comic characters with optional filters.

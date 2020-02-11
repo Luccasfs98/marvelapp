@@ -1,4 +1,4 @@
-package com.marvel.core.network.responses
+package br.com.marvel.core.network.responses
 
 
 /**

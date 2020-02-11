@@ -64,5 +64,5 @@ class CharactersFragment : BaseFragment<CharactersViewModel>(CharactersViewModel
         toFeatureDetail(idCharacter)
     }
 
-    private fun toFeatureDetail(idCharacter: Long?) = SampleNavigation.dynamicStart2?.let { startActivity(it) }
+    private fun toFeatureDetail(idCharacter: Long?) = SampleNavigation.characterDetails(idCharacter)?.let { startActivity(it) }
 }

@@ -37,18 +37,16 @@
             android:id="@+id/tv_hero_name"
             android:layout_width="0dp"
             android:fontFamily="@font/anton_regular"
-            android:text="Homem-aranha"
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/tv_character_name"
-            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:id="@+id/tv_description"
+            style="@style/TextAppearance.MaterialComponents.Body1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_margin="8dp"
             android:fontFamily="@font/anton_regular"
-            android:gravity="center"
-            android:text="Homem-aranha"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/tv_hero_name"
             app:layout_constraintStart_toStartOf="@+id/tv_hero_name"
             app:layout_constraintTop_toBottomOf="@id/tv_hero_name" />

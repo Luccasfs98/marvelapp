@@ -1,11 +1,9 @@
 package br.com.marvel.core.network.repository
 
 import com.marvel.core.BuildConfig
-import com.marvel.core.network.MarvelService
-import com.marvel.core.network.responses.BaseResponse
+import br.com.marvel.core.network.MarvelService
+import br.com.marvel.core.network.responses.BaseResponse
 import com.marvel.core.network.responses.CharacterResponse
-import com.marvel.core.network.responses.ComicResponse
-import com.marvel.core.network.responses.CreatorResponse
 import com.marvel.core.utils.toMD5
 
 
@@ -13,7 +11,7 @@ import com.marvel.core.utils.toMD5
  * Repository module for handling marvel API network operations [MarvelService].
  */
 class MarvelRepository(
-    internal val service: MarvelService
+    private val service: MarvelService
 ) {
 
     companion object {
@@ -28,7 +26,7 @@ class MarvelRepository(
      * @param id A single character id.
      * @return Response for single character resource.
      */
-    suspend fun getCharacter(id: Long): BaseResponse<CharacterResponse> {
+    suspend fun getCharacter(id: Long): CharacterResponse {
         val timestamp = System.currentTimeMillis().toString()
         return service.getCharacter(
             id = id,
@@ -61,55 +59,6 @@ class MarvelRepository(
             orderBy = orderBy
         )
     }
-
-
-    /**
-     * Get all Marvel Comics by paged.
-     *
-     * @param offset Skip the specified number of resources in the result set.
-     * @param limit Limit the result set to the specified number of resources.
-     * @param orderBy ordena o resultado de acordo com as opções documentadas na API.
-     * @return Response for comic characters resource.
-     */
-    suspend fun getComics(
-        offset: Int,
-        limit: Int,
-        dateDescriptor: String = "thisWeek"
-    ): BaseResponse<ComicResponse> {
-        val timestamp = System.currentTimeMillis().toString()
-        return service.getComics(
-            apiKey = API_PUBLIC_KEY,
-            hash = generateApiHash(timestamp),
-            timestamp = timestamp,
-            offset = offset,
-            limit = limit,
-            dateDescriptor = dateDescriptor
-        )
-    }
-
-
-    /**
-     * Get all Marvel Comics by paged.
-     *
-     * @param offset Skip the specified number of resources in the result set.
-     * @param limit Limit the result set to the specified number of resources.
-     * @param orderBy ordena o resultado de acordo com as opções documentadas na API.
-     * @return Response for comic characters resource.
-     */
-    suspend fun getCreators(
-        offset: Int,
-        limit: Int
-    ): BaseResponse<CreatorResponse> {
-        val timestamp = System.currentTimeMillis().toString()
-        return service.getCreators(
-            apiKey = API_PUBLIC_KEY,
-            hash = generateApiHash(timestamp),
-            timestamp = timestamp,
-            offset = offset,
-            limit = limit
-        )
-    }
-
 
     // ============================================================================================
     //  Private generators methods

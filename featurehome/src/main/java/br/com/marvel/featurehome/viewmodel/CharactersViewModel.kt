@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import br.com.marvel.core.network.repository.MarvelRepository
-import com.marvel.core.network.responses.BaseResponse
+import br.com.marvel.core.network.responses.BaseResponse
 import com.marvel.core.network.responses.CharacterResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

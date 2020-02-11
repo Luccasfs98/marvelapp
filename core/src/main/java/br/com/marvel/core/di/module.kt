@@ -1,7 +1,7 @@
 package com.marvel.core.di
 
 import com.marvel.core.BuildConfig
-import com.marvel.core.network.MarvelService
+import br.com.marvel.core.network.MarvelService
 import br.com.marvel.core.network.repository.MarvelRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

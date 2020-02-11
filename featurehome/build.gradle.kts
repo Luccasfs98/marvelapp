@@ -42,7 +42,6 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     api ("androidx.legacy:legacy-support-v4:1.0.0")
 
-
     implementation(com.marvel.buildScript.AndroidLibraries.APP_COMPAT_IMPL)
     implementation(com.marvel.buildScript.AndroidLibraries.CORE_KTX_IMPL)
     implementation(com.marvel.buildScript.AndroidLibraries.CONSTRAINT_LAYOUT_IMPL)
@@ -54,7 +53,6 @@ dependencies {
     implementation (com.marvel.buildScript.AndroidLibraries.NAVIGATION_UI_IMPL)
 
     implementation(com.marvel.buildScript.KotlinLibraries.KOTLIN_IMPL)
-
 
     implementation(com.marvel.buildScript.Libraries.KOIN_IMPL)
     implementation(com.marvel.buildScript.Libraries.KOIN_ANDROID_SCOPE_IMPL)

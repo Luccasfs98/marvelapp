@@ -15,7 +15,7 @@
     </dist:module>
 
     <application tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="br.com.marvel.detailcharacter.view.activity.DetailCharacterActivity"/>
+        <activity android:name=".view.activity.DetailCharacterActivity"/>
     </application>
 </manifest>
 

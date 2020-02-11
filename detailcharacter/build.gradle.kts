@@ -58,6 +58,8 @@ dependencies {
     implementation(com.marvel.buildScript.Libraries.COIL_IMPL)
     implementation(com.marvel.buildScript.Libraries.LOTTIE_IMPL)
     implementation(com.marvel.buildScript.Libraries.STATUS_BAR_UTIL_IMPL)
+    implementation(com.marvel.buildScript.Libraries.CIRCLE_IMAGE_VIEW_IMPL)
+
     testImplementation(com.marvel.buildScript.TestLibraries.junit4)
 
     implementation(project(com.marvel.buildScript.Modules.MODULE_COMMON))
