@@ -1,0 +1,21 @@
+<manifest xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.marvel.detailcharacter">
+
+    <dist:module
+        dist:instant="false"
+        dist:onDemand="true"
+        dist:title="detailcharacter">
+        <dist:delivery>
+            <dist:on-demand />
+        </dist:delivery>
+
+        <dist:fusing dist:include="true" />
+    </dist:module>
+
+    <application tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="br.com.marvel.detailcharacter.view.activity.DetailCharacterActivity"/>
+    </application>
+</manifest>
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/iv_thumb"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginTop="16dp"
+            android:id="@+id/iv_character_profile"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:layout_constraintEnd_toEndOf="@id/iv_thumb"
+            app:layout_constraintStart_toStartOf="@id/iv_thumb"
+            app:layout_constraintTop_toTopOf="@id/iv_thumb"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:layout_margin="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/iv_character_profile"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:id="@+id/tv_hero_name"
+            android:layout_width="0dp"
+            android:fontFamily="@font/anton_regular"
+            android:text="Homem-aranha"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_character_name"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/anton_regular"
+            android:gravity="center"
+            android:text="Homem-aranha"
+            app:layout_constraintEnd_toEndOf="@+id/tv_hero_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_hero_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_hero_name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

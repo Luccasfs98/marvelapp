@@ -1,0 +1,5 @@
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">http://gateway.marvel.com</domain>
+    </domain-config>
+</network-security-config>

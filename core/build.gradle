@@ -1,0 +1,76 @@
+import com.marvel.buildScript.AndroidLibraries
+import com.marvel.buildScript.KotlinLibraries
+import com.marvel.buildScript.Libraries
+import com.marvel.buildScript.Releases
+import com.marvel.buildScript.Version
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion Version.COMPILE_SDK_VERSION
+
+    defaultConfig {
+        minSdkVersion Version.MIN_SDK_VERSION
+        targetSdkVersion Version.TARGET_SDK_VERSION
+        versionCode Releases.VERSION_CODE
+        versionName Releases.VERSION_NAME
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    buildTypes {
+
+        debug {
+            buildConfigField "String", "MARVEL_API_KEY_PUBLIC", MARVEL_API_KEY_PUBLIC
+            buildConfigField "String", "MARVEL_API_KEY_PRIVATE", MARVEL_API_KEY_PRIVATE
+            buildConfigField "String", "API_URL", API_URL
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "MARVEL_API_KEY_PUBLIC", MARVEL_API_KEY_PUBLIC
+            buildConfigField "String", "MARVEL_API_KEY_PRIVATE", MARVEL_API_KEY_PRIVATE
+            buildConfigField "String", "API_URL", API_URL
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation AndroidLibraries.APP_COMPAT_IMPL
+    implementation AndroidLibraries.CORE_KTX_IMPL
+    implementation AndroidLibraries.CONSTRAINT_LAYOUT_IMPL
+    implementation AndroidLibraries.LIFECYCLE_ANDROID_IMPL
+    implementation AndroidLibraries.MATERIAL_DESIGN_IMPL
+    implementation AndroidLibraries.KOTLIN_COROUTINES_IMPL
+    implementation KotlinLibraries.KOTLIN_IMPL
+
+    implementation Libraries.KOIN_IMPL
+    implementation Libraries.KOIN_ANDROID_SCOPE_IMPL
+    implementation Libraries.KOIN_ANDROID_VIEWMODEL_IMPL
+    implementation Libraries.RETROFIT_IMPL
+    implementation Libraries.LOGGING_INTERCEPTOR_IMPL
+    implementation Libraries.RETROFIT_GSON_IMPL
+    implementation Libraries.COIL_IMPL
+
+
+
+}

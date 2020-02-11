@@ -1,0 +1,43 @@
+import com.marvel.buildScript.AndroidLibraries
+import com.marvel.buildScript.KotlinLibraries
+import com.marvel.buildScript.Releases
+import com.marvel.buildScript.TestLibraries
+import com.marvel.buildScript.Version
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion Version.COMPILE_SDK_VERSION
+
+    defaultConfig {
+        minSdkVersion Version.MIN_SDK_VERSION
+        targetSdkVersion Version.TARGET_SDK_VERSION
+        versionCode Releases.VERSION_CODE
+        versionName Releases.VERSION_NAME
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation KotlinLibraries.KOTLIN_IMPL
+    implementation AndroidLibraries.APP_COMPAT_IMPL
+    implementation AndroidLibraries.CORE_KTX_IMPL
+    testImplementation TestLibraries.JUNIT_IMPL
+    androidTestImplementation TestLibraries.ANDROID_TEST_JUNIT_IMPL
+    androidTestImplementation TestLibraries.ANDROID_TEST_ESPRESSO_IMPL
+    implementation AndroidLibraries.PLAY_CORE_IMPL
+
+}

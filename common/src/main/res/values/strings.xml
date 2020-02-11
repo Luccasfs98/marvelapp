@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Common</string>
+    <string name="app_without_network">Oops, parece que você está sem conexão \ncom a internet</string>
+</resources>
